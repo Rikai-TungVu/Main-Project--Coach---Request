@@ -1,6 +1,6 @@
 <template>
-  <section>Filter</section>
-  <section>List of coaches</section>
+  <section></section>
+  <section></section>
 </template>
 
 <script></script>
