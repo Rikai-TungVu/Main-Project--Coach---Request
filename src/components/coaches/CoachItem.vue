@@ -20,8 +20,6 @@
 </template>
 
 <script>
-// import '../../../css/coach-item.css';
-
 export default {
   props: ['id', 'firstName', 'lastName', 'rate', 'areas'],
   computed: {
