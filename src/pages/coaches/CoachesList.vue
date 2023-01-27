@@ -1,6 +1,7 @@
 <template>
   <section>Filter</section>
   <section>
+    <!-- <base-card> -->
     <div class="controls">
       <button>Refresh</button>
       <router-link to="register">Register as Coach</router-link>
@@ -17,6 +18,7 @@
       ></CoachItem>
     </ul>
     <h3 v-else>No Coaches found.</h3>
+    <!-- </base-card> -->
   </section>
 </template>
 
