@@ -1,6 +1,3 @@
-<template>
-  <section></section>
-  <section></section>
-</template>
+<template>Contact Messenge</template>
 
 <script></script>
