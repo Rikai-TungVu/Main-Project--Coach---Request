@@ -36,4 +36,4 @@ export default {
 };
 </script>
 
-<style scoped src="../../../css/coach-item.css"></style>
+<style scoped src="../../css/coach-item.css"></style>

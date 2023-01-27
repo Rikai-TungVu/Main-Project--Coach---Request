@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import CoachItem from '../../components/layout/coaches/CoachItem.vue';
+import CoachItem from '../../components/coaches/CoachItem.vue';
 
 export default {
   components: {
