@@ -1,5 +1,7 @@
 <template>
-  <section>Filter</section>
+  <section>
+    <CoachFilter @change-filter="setFilters"></CoachFilter>
+  </section>
   <section>
     <div class="controls">
       <base-button mode="outline" link to="/">Refresh</base-button>
@@ -22,19 +24,42 @@
 
 <script>
 import CoachItem from '../../components/coaches/CoachItem.vue';
+import CoachFilter from '../../components/coaches/CoachFilter.vue';
 
 export default {
   components: {
     CoachItem,
+    CoachFilter,
+  },
+  data() {
+    return {
+      activeFilters: {
+        frontend: true,
+        backend: true,
+        career: true,
+      },
+    };
   },
   computed: {
     filteredCoaches() {
-      return this.$store.getters['coaches/coaches'];
+      //return this.$store.getters['coaches/coaches'];
       // coaches đầu tiên là namespace đc define ở src\store\modules\coaches\index.js
       // coaches thứ 2 sau / là gettername
+
+      const coaches = this.$store.getters['coaches/coaches'];
+      return coaches.filter((coach) => {
+        if (this.activeFilters.frontend && coach.areas.includes('frontend')) {
+          return true;
+        }
+      });
     },
     hasCoaches() {
       return this.$store.getters['coaches/coaches'];
+    },
+  },
+  methods: {
+    setFilters(updateFilters) {
+      this.activeFilters = updateFilters;
     },
   },
 };
