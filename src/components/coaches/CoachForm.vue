@@ -27,12 +27,7 @@
         <label for="backend">Frontend Devolopment</label>
       </div>
       <div>
-        <input
-          type="checkbox"
-          id="career"
-          value="frocareerntend"
-          v-model="areas"
-        />
+        <input type="checkbox" id="career" value="career" v-model="areas" />
         <label for="career">Career Advisory</label>
       </div>
     </div>
@@ -42,6 +37,7 @@
 
 <script>
 export default {
+  emits: ['save-data'],
   data() {
     return {
       firstName: '',
@@ -60,7 +56,8 @@ export default {
         rate: this.rate,
         areas: this.areas,
       };
-      console.log(formData);
+      this.$emit('save-data', formData);
+      this.$router.push({ path: '/' });
     },
   },
 };
