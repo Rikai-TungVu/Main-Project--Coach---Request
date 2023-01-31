@@ -57,7 +57,8 @@ export default {
         areas: this.areas,
       };
       this.$emit('save-data', formData);
-      this.$router.push({ path: '/' });
+      // this.$router.push({ path: '/' });
+      // // bach to MainPage
     },
   },
 };

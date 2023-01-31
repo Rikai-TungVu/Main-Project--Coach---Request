@@ -5,7 +5,9 @@
   <section>
     <div class="controls">
       <base-button mode="outline" link to="/">Refresh</base-button>
-      <base-button link to="/register">Register as Coach</base-button>
+      <base-button v-if="!isCoach" link to="/register"
+        >Register as Coach</base-button
+      >
     </div>
     <ul v-if="hasCoaches">
       <CoachItem
@@ -41,6 +43,11 @@ export default {
     };
   },
   computed: {
+    isCoach() {
+      return this.$store.getters['coaches/isCoach'];
+    },
+    // invisible Register button when user registed as a Coach
+    // return false when user registed as a Coach
     filteredCoaches() {
       //return this.$store.getters['coaches/coaches'];
       // coaches đầu tiên là namespace đc define ở src\store\modules\coaches\index.js
